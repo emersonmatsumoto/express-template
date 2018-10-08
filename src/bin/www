@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+const http = require('http')
+const app = require('../app')
+const normalizePort = require('./normalize-port')
+const onError = require('./on-error')
+const onListening = require('./on-listening')
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+const port = normalizePort(process.env.PORT || '3000')
+app.set('port', port)
+
+/**
+ * Create HTTP server.
+ */
+
+const server = http.createServer(app)
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+server.listen(port)
+server.on('error', onError(port))
+server.on('listening', onListening(server))
