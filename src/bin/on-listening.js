@@ -1,4 +1,4 @@
-const debug = require('debug')('express-template:server')
+const logger = require('../logger')
 
 /**
  * Event listener for HTTP server "listening" event.
@@ -9,7 +9,7 @@ const onListening = server => () => {
   const bind = typeof addr === 'string'
     ? `pipe ${addr}`
     : `port ${addr.port}`
-  debug(`Listening on ${bind}`)
+  logger.info(`Listening on ${bind}`)
 }
 
 module.exports = onListening
