@@ -25,5 +25,11 @@
     "eslint-plugin-standard": "^4.0.0",
     "nyc": "^13.0.1",
     "sinon": "^6.3.5"
+  },
+  "nyc": {
+    "exclude": [
+      "**/*.spec.js",
+      "build"
+    ]
   }
 }

@@ -16,10 +16,10 @@ onError.createHandler = port => (error) => {
   switch (error.code) {
     case 'EACCES':
       logger.error(`${bind} requires elevated privileges`)
-      process.exit(1)
+      return process.exit(1)
     case 'EADDRINUSE':
       logger.error(`${bind} is already in use`)
-      process.exit(1)
+      return process.exit(1)
     default:
       throw error
   }

@@ -58,15 +58,4 @@ describe('bin/on-error', () => {
       })
     })
   })
-
-  // context('whithout arguments ', () => {
-  //   it('should be return a function', () => expect(normalizePort()).to.be.undefined)
-  // })
-  // context('with NaN value', () => {
-  //   it('should return the argument value', () => {
-  //     const port = 't23'
-  //     expect(normalizePort(port)).to.be.equal(port)
-  //   })
-  // })
-  // context('with')
 })
