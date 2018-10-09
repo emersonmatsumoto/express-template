@@ -7,9 +7,9 @@ const logger = winston.createLogger({
     new winston.transports.Console({
       level,
       timestamp: () => new Date().toISOString(),
-      stderrLevels: ['error', 'critical'],
-    }),
-  ],
+      stderrLevels: ['error', 'critical']
+    })
+  ]
 })
 
 module.exports = logger

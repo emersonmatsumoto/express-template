@@ -1,4 +1,4 @@
 module.exports = {
-  extends: ['pagarme-base'],
+  extends: 'standard',
   env: { mocha: true }
 }

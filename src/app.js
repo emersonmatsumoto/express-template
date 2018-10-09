@@ -16,7 +16,7 @@ app.use(expressWinston.logger({
       return 'info'
     }
     return 'error'
-  },
+  }
 }))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
