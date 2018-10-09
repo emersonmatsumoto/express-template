@@ -6,7 +6,6 @@
 
 const http = require('http')
 const app = require('../app')
-const normalizePort = require('./normalize-port')
 const onError = require('./on-error')
 const onListening = require('./on-listening')
 
@@ -14,7 +13,7 @@ const onListening = require('./on-listening')
  * Get port from environment and store in Express.
  */
 
-const port = normalizePort(process.env.PORT || '3000')
+const port = process.env.PORT || '3000'
 app.set('port', port)
 
 /**
@@ -28,5 +27,5 @@ const server = http.createServer(app)
  */
 
 server.listen(port)
-server.on('error', onError(port))
+server.on('error', onError.createHandler(port))
 server.on('listening', onListening(server))

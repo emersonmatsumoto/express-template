@@ -1,3 +1,4 @@
 module.exports = {
-  "extends": ["pagarme-base"]
+  extends: ['pagarme-base'],
+  env: { mocha: true }
 }

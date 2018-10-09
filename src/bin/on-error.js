@@ -3,15 +3,14 @@ const logger = require('../logger')
 /**
  * Event listener for HTTP server "error" event.
  */
+const onError = {}
 
-const onError = port => (error) => {
+onError.createHandler = port => (error) => {
   if (error.syscall !== 'listen') {
     throw error
   }
 
-  const bind = typeof port === 'string'
-    ? `Pipe ${port}`
-    : `Port ${port}`
+  const bind = `Port ${port}`
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
