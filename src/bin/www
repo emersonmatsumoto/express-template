@@ -28,4 +28,4 @@ const server = http.createServer(app)
 
 server.listen(port)
 server.on('error', onError.createHandler(port))
-server.on('listening', onListening(server))
+server.on('listening', onListening.createHandler(server))
