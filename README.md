@@ -1,6 +1,6 @@
 # Express Template
 
-Template minímo com express
+Express on docker with unit test, lint and logger.
 
 ## Getting Started
 
@@ -26,6 +26,15 @@ docker run --rm -p 3000:3000 --name express express-template
 npm install
 
 npm run test
+```
+
+
+## Running lint
+
+```
+npm install
+
+npm run lint
 ```
 
 ## License
