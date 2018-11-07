@@ -28,6 +28,14 @@ npm install
 npm run test
 ```
 
+## Running the tests coverage
+
+```
+npm install
+
+npm run test:coverage
+```
+
 
 ## Running lint
 
