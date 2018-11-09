@@ -9,20 +9,20 @@
     "test:coverage": "nyc mocha {src,tests}/**/*.spec.js"
   },
   "dependencies": {
-    "chai": "^4.2.0",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.4",
     "express-winston": "^3.0.1",
-    "mocha": "^5.2.0",
     "winston": "^3.1.0"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
     "eslint": "^5.8.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
+    "mocha": "^5.2.0",
     "nyc": "^13.1.0",
     "proxyquire": "^2.1.0",
     "sinon": "^6.3.5",
