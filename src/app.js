@@ -1,7 +1,7 @@
 const express = require('express')
 const path = require('path')
 const cookieParser = require('cookie-parser')
-const { transports } = require('./logger')
+const { transports, format } = require('./logger')
 const expressWinston = require('express-winston')
 
 const usersRouter = require('./routes/users')
@@ -10,6 +10,7 @@ const errorHandler = require('./error-handler')
 const app = express()
 
 app.use(expressWinston.logger({
+  format,
   transports,
   level: (req, res) => {
     if (res.statusCode < 400) {

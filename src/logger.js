@@ -1,10 +1,11 @@
-const winston = require('winston')
-
+const { createLogger, format, transports } = require('winston')
+const { combine, timestamp, json, prettyPrint } = format
 const level = process.env.LOG_LEVEL || 'debug'
 
-const logger = winston.createLogger({
+const logger = createLogger({
+  format: combine(timestamp(), json()),
   transports: [
-    new winston.transports.Console({
+    new transports.Console({
       level,
       timestamp: () => new Date().toISOString(),
       stderrLevels: ['error', 'critical']
