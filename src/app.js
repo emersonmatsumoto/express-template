@@ -6,6 +6,7 @@ const expressWinston = require('express-winston')
 
 const usersRouter = require('./routes/users')
 
+const errorHandler = require('./error-handler')
 const app = express()
 
 app.use(expressWinston.logger({
@@ -23,5 +24,6 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/users', usersRouter)
+app.use(errorHandler)
 
 module.exports = app
