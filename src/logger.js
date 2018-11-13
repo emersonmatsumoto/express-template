@@ -1,5 +1,5 @@
 const { createLogger, format, transports } = require('winston')
-const { combine, timestamp, json, prettyPrint } = format
+const { combine, timestamp, json } = format
 const level = process.env.LOG_LEVEL || 'debug'
 
 const logger = createLogger({
