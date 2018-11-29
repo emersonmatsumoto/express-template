@@ -19,7 +19,7 @@ app.use(expressWinston.logger({
     }
     return 'error'
   },
-  requestWhitelist: ['xRequestId', 'url'],
+  requestWhitelist: ['xRequestId', 'url', 'headers'],
   responseWhitelist: ['statusCode', 'body', 'stack']
 }))
 app.use(express.json())
