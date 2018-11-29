@@ -3,6 +3,7 @@ const path = require('path')
 const cookieParser = require('cookie-parser')
 const { transports, format } = require('./logger')
 const expressWinston = require('express-winston')
+const { addXRequestId } = require('./x-request-id')
 
 const usersRouter = require('./routes/users')
 
@@ -17,14 +18,18 @@ app.use(expressWinston.logger({
       return 'info'
     }
     return 'error'
-  }
+  },
+  requestWhitelist: ['xRequestId', 'url'],
+  responseWhitelist: ['statusCode', 'body', 'stack']
 }))
 app.use(express.json())
+app.use(addXRequestId)
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/users', usersRouter)
+
 app.use(errorHandler)
 
 module.exports = app
