@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  app:
+    image: node:alpine
+    container_name: app
+    command: sh -c "npm install && npm run debug"
+    ports:
+      - "3000:3000"
+      - "9229:9229"
+    environment:
+      - NODE_ENV=debug
+    working_dir: /app
+    volumes:
+      - .:/app

@@ -30,6 +30,10 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/users', usersRouter)
 
+app.get('/_health_check', (req, res) => {
+  res.send('ok')
+})
+
 app.use(errorHandler)
 
 module.exports = app

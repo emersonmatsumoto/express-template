@@ -3,9 +3,14 @@
   "configurations": [
     {
       "type": "node",
-      "request": "launch",
-      "name": "Launch Program",
-      "program": "${workspaceFolder}/src/bin/www"
+      "request": "attach",
+      "name": "Attach to Remote",
+      "address": "localhost",
+      "port": 9229,
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "/app",
+      "protocol": "inspector",
+      "preLaunchTask": "healthcheck"
     },
     {
       "type": "node",

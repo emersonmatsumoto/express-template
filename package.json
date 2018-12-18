@@ -6,7 +6,8 @@
     "start": "node ./src/bin/www",
     "lint": "eslint './{src,tests}/**/*.js'",
     "test": "mocha {src,tests}/**/*.spec.js -w",
-    "test:coverage": "nyc mocha {src,tests}/**/*.spec.js"
+    "test:coverage": "nyc mocha {src,tests}/**/*.spec.js",
+    "debug": "nodemon --inspect=0.0.0.0 ./src/bin/www"
   },
   "dependencies": {
     "cookie-parser": "^1.4.3",
@@ -24,6 +25,7 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
     "mocha": "^5.2.0",
+    "nodemon": "^1.18.9",
     "nyc": "^13.1.0",
     "proxyquire": "^2.1.0",
     "rewire": "^4.0.1",
